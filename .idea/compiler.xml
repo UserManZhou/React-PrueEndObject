@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EntityMicroservice" />
+        <module name="EruekaMicorservice" />
+        <module name="ZuulMircoservice" />
+        <module name="ServiceMircoservice" />
+        <module name="UserMicroservice" />
+        <module name="MapperMicroservice" />
+        <module name="VerifyMircoservicer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SecurityMicroservice" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EntityMicroservice" options="-parameters" />
+      <module name="EruekaMicorservice" options="-parameters" />
+      <module name="MapperMicroservice" options="-parameters" />
+      <module name="SecurityMicroservice" options="-parameters" />
+      <module name="ServiceMircoservice" options="-parameters" />
+      <module name="UserMicroservice" options="-parameters" />
+      <module name="VerifyMircoservicer" options="-parameters" />
+      <module name="ZuulMircoservice" options="-parameters" />
+    </option>
+  </component>
+</project>
