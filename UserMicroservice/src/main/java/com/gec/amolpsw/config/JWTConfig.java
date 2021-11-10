@@ -26,7 +26,9 @@ public class JWTConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(intercopector).addPathPatterns("/**").excludePathPatterns("/UserManage/login","/swagger-resources/**", "/webjars/**", "/v2/**", "/doc.html/**");
+        registry.addInterceptor(intercopector)
+                .addPathPatterns("/**").
+                excludePathPatterns("/UserManage/login","/swagger-resources/**", "/webjars/**", "/v2/**", "/doc.html/**");
     }
 
     @Override

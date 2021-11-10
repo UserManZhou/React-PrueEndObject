@@ -12,5 +12,9 @@ public interface UserService {
 
     public UserInf findNameAndPassword(UserInf userInf);
 
-    public Boolean incrementUser(@NotNull UserInf userInf);
+    public Boolean incrementUser(List<UserInf> userInf);
+
+    public Boolean deleteUser(List<UserInf> userInf);
+
+    public Boolean updateUser(List<UserInf> userInf);
 }

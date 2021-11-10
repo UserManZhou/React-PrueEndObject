@@ -7,12 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="EntityMicroservice" />
+        <module name="DepartmentMicroservice" />
         <module name="EruekaMicorservice" />
         <module name="ZuulMircoservice" />
         <module name="ServiceMircoservice" />
         <module name="UserMicroservice" />
         <module name="MapperMicroservice" />
+        <module name="EntityMicroservice" />
+        <module name="PositionMircoservice" />
         <module name="VerifyMircoservicer" />
       </profile>
     </annotationProcessing>
@@ -22,9 +24,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DepartmentMicroservice" options="-parameters" />
       <module name="EntityMicroservice" options="-parameters" />
       <module name="EruekaMicorservice" options="-parameters" />
       <module name="MapperMicroservice" options="-parameters" />
+      <module name="PositionMircoservice" options="-parameters" />
       <module name="SecurityMicroservice" options="-parameters" />
       <module name="ServiceMircoservice" options="-parameters" />
       <module name="UserMicroservice" options="-parameters" />

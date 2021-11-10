@@ -1,6 +1,8 @@
 package com.gec.amolpsw.controller;
 
+import com.gec.amolpsw.UserApp;
 import com.gec.amolpsw.mapper.UserInfMapper;
+import com.gec.amolpsw.mapper.service.IUserInfService;
 import com.gec.amolpsw.service.UserService;
 import com.gec.amolpsw.entity.UserInf;
 import org.apache.commons.collections.map.HashedMap;
@@ -11,6 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
 
@@ -23,12 +29,18 @@ public class UserMicroserviceTest {
     private UserService userService;
 
     @Autowired
+    private IUserInfService iUserInfService;
+
+    @Autowired
     private UserInfMapper userInfMapper;
 
     @Test
     public void test(){
         List<UserInf> user = userService.findUser();
-        System.out.println("user.toString() = " + user.toString());
+        //自己加正则判断
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime parse = LocalDateTime.parse(user.get(0).getCreateTime().toString(), df);
+        System.out.println("parse = " + parse.toString());
     }
 
     @Test

@@ -10,17 +10,16 @@ import java.util.Map;
 
 public class TokenIncrement {
 
-  public static String getToken(UserInf userInf){
+    public static String getToken(UserInf userInf){
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DATE, 30);
         Map<String,Object> map = new HashMap<>();
         return JWT.create()
-                          .withHeader(map)
-                          .withClaim("playload", userInf.getId())
-                          .withClaim("footer", userInf.getPassword())
-                          .withExpiresAt(calendar.getTime())
-                          .sign(Algorithm.HMAC256("!@#$%^&%^&*"));
+                .withHeader(map)
+                .withClaim("playload", userInf.getId())
+                .withClaim("footer", userInf.getPassword())
+                .withExpiresAt(calendar.getTime())
+                .sign(Algorithm.HMAC256("!@#$%^&%^&*"));
     }
-
 
 }

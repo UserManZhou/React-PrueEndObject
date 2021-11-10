@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
  * @author jobob
  * @since 2021-11-01
  */
-@Service
+@Service("JobInfServiceImpl")
 public class JobInfServiceImpl extends ServiceImpl<JobInfMapper, JobInf> implements IJobInfService {
 
 }

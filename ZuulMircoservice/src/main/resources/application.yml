@@ -15,4 +15,8 @@ zuul:
       path: /user/**
       url: http://localhost:8801/
       serviceId: userApi
+    api-department-ms:
+      path: /department/**
+      url: http://localhost:8802/
+      serviceId: departmentApi
 

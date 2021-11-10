@@ -1,10 +1,12 @@
 package com.gec.amolpsw.service.impl;
 
 import com.gec.amolpsw.mapper.UserInfMapper;
+import com.gec.amolpsw.mapper.service.IUserInfService;
 import com.gec.amolpsw.service.UserService;
 import com.gec.amolpsw.entity.UserInf;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -18,6 +20,10 @@ public class Userserviceimpl implements UserService {
     @Autowired
     private UserInfMapper userInfMapper;
 
+    @Autowired
+    @Qualifier("UserInfServiceImpl")
+    private IUserInfService iUserInfService;
+
     @Override
     public List<UserInf> findUser() {
         return userInfMapper.selectList(null);
@@ -29,13 +35,21 @@ public class Userserviceimpl implements UserService {
         map.put("loginname", userInf.getLoginname());
         map.put("password",userInf.getPassword());
         List<UserInf> userInfs = userInfMapper.selectByMap(map);
-        System.out.println("userInf = " + userInfs.toString());
-        return userInfs.get(0);
+        return userInfs.size() > 0 ? userInfs.get(0) : null;
     }
 
     @Override
-    public Boolean incrementUser(UserInf userInf) {
-        int insert = userInfMapper.insert(userInf);
-        return insert > 0;
+    public Boolean incrementUser(List<UserInf> userInf) {
+        return iUserInfService.saveBatch(userInf);
+    }
+
+    @Override
+    public Boolean deleteUser(List<UserInf> userInf) {
+        return iUserInfService.removeByIds(userInf);
+    }
+
+    @Override
+    public Boolean updateUser(List<UserInf> userInf) {
+        return iUserInfService.updateBatchById(userInf);
     }
 }

@@ -16,7 +16,6 @@ config:
     # header 名称
     header: token
 
-
 #mybatis-plus:
 #  mapper-locations: classpath:/com/gec/amolpsw/mapper/*.xml
 #  global-config:

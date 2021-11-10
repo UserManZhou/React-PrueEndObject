@@ -17,6 +17,8 @@
         <module>SecurityMicroservice</module>
         <module>ServiceMircoservice</module>
         <module>VerifyMircoservicer</module>
+        <module>DepartmentMicroservice</module>
+        <module>PositionMircoservice</module>
     </modules>
 
     <parent>

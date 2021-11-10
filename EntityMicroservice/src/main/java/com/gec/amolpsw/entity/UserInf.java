@@ -2,7 +2,7 @@ package com.gec.amolpsw.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.sun.istack.internal.NotNull;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -44,7 +44,8 @@ public class UserInf implements Serializable {
 
     @TableField("createdate")
     @ApiModelProperty(name = "User Createdate and table is createdate clounm",value = "User Createdate",required = false,position = 5,example = "创建时间")
-    private LocalDateTime createdate;
+    @JsonFormat(pattern = "yyyy年MM月dd日 HH:mm:ss",timezone="Asia/Shanghai")
+    private LocalDateTime createTime;
 
     @TableField("username")
     @ApiModelProperty(name = "User Username and table is username clounm",value = "UserName",required = false,position = 6,example = "用户名")

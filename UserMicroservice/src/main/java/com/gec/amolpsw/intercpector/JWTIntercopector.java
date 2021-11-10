@@ -14,7 +14,8 @@ public class JWTIntercopector implements HandlerInterceptor{
         String header = request.getHeader("header");
         System.out.println("header = " + header);
         String requestURI = request.getRequestURI();
-        if (header == null || header == ""){
+        if (header == null || header == "" || header.equals("Bearer undefined")){
+            response.setContentType("application/json;charset=UTF-8");
             response.getWriter().write(new ObjectMapper().writeValueAsString(" Please Login get Token"));
             return false;
         }

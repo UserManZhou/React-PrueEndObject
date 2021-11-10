@@ -2,6 +2,7 @@ package com.gec.amolpsw.mapper.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.gec.amolpsw.entity.UserInf;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>
